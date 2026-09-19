@@ -5,8 +5,7 @@ interface VideoReview {
   brandName: string;
   niche: string;
   resultMetric: string;
-  videoSrc?: string; // Path to MP4 file in public/videos/ e.g. "/videos/review1.mp4" OR YouTube/Loom embed link
-  embedType?: 'video' | 'youtube' | 'iframe';
+  embedUrl: string;
   quote: string;
 }
 
@@ -17,8 +16,7 @@ const videoReviews: VideoReview[] = [
     brandName: "Skincare Brand Founder",
     niche: "Beauty & Personal Care",
     resultMetric: "3X Sales Growth in 60 Days",
-    videoSrc: "/videos/review1.mp4",
-    embedType: "video",
+    embedUrl: "https://drive.google.com/file/d/1GHHSFYkd9sRl3ckJemLvzVALYZ_x57iS/preview",
     quote: "Scaled our daily orders with viral UGC video ads and Meta media buying."
   },
   {
@@ -27,8 +25,7 @@ const videoReviews: VideoReview[] = [
     brandName: "Women's Fashion Owner",
     niche: "Apparel & Accessories",
     resultMetric: "Hit PKR 1 Crore/Month",
-    videoSrc: "/videos/review2.mp4",
-    embedType: "video",
+    embedUrl: "https://drive.google.com/file/d/1aj0eNNcqPrqH_HR_99lJ_laPU62-4WaC/preview",
     quote: "Transformed our ad strategy and delivered consistent 4.8X ROAS."
   },
   {
@@ -37,8 +34,7 @@ const videoReviews: VideoReview[] = [
     brandName: "Wellness D2C Founder",
     niche: "Health & Nutrition",
     resultMetric: "PKR 5.5 Crore Revenue",
-    videoSrc: "/videos/review3.mp4",
-    embedType: "video",
+    embedUrl: "https://drive.google.com/file/d/1Xen4rmEb5NSjOCkbn60ThspzGa3-Kyv_/preview",
     quote: "The influencer video ads produced shot our sales up consistently month-over-month."
   },
   {
@@ -47,8 +43,7 @@ const videoReviews: VideoReview[] = [
     brandName: "Footwear Brand Owner",
     niche: "Lifestyle & Accessories",
     resultMetric: "+280% Revenue Surge",
-    videoSrc: "/videos/review4.mp4",
-    embedType: "video",
+    embedUrl: "https://drive.google.com/file/d/1RUorbODuVmgpv3vsC8FEcPRMtiAvabju/preview",
     quote: "Deep research and creative iteration took our customer acquisition to the next level."
   },
   {
@@ -57,9 +52,8 @@ const videoReviews: VideoReview[] = [
     brandName: "Jewelry Brand Founder",
     niche: "Luxury & Accessories",
     resultMetric: "5.1X Campaign ROAS",
-    videoSrc: "/videos/review5.mp4",
-    embedType: "video",
-    quote: "Professional execution and daily communication throughout our scale scaling phases."
+    embedUrl: "https://drive.google.com/file/d/1ybg06EpkR07PC9KtZ6NS4yq-2SnP93OO/preview",
+    quote: "Professional execution and daily communication throughout our scaling phases."
   },
   {
     id: "review-6",
@@ -67,8 +61,7 @@ const videoReviews: VideoReview[] = [
     brandName: "Home Decor Founder",
     niche: "Home & Living",
     resultMetric: "5,000+ Monthly Orders",
-    videoSrc: "/videos/review6.mp4",
-    embedType: "video",
+    embedUrl: "https://drive.google.com/file/d/1S-ETJ3HFpjPwAvay9PhYq7QO1yElC7dk/preview",
     quote: "Working with HBA gave us full confidence to scale our advertising budget profitably."
   }
 ];
@@ -94,23 +87,19 @@ const videoReviews: VideoReview[] = [
       {videoReviews.map((item) => (
         <div class="rounded-2xl bg-white dark:bg-stone-900 border border-stone-200 dark:border-stone-800 overflow-hidden shadow-sm hover:shadow-xl hover:border-amber-500/50 transition-all flex flex-col justify-between group">
           
-          <!-- Video Container / Player Frame -->
-          <div class="relative aspect-[9/16] max-h-[360px] bg-stone-950 flex items-center justify-center overflow-hidden">
-            <!-- HTML5 Video element (shown if MP4 file exists) -->
-            <video
-              id={item.id}
-              src={item.videoSrc}
-              controls
-              playsinline
-              preload="metadata"
-              class="w-full h-full object-cover"
-              poster=""
-            >
-              Your browser does not support video playback.
-            </video>
+          <!-- Video Frame (Google Drive Preview iFrame) -->
+          <div class="relative aspect-[9/16] max-h-[380px] bg-stone-950 flex items-center justify-center overflow-hidden">
+            <iframe
+              src={item.embedUrl}
+              title={item.clientName}
+              allow="autoplay; encrypted-media"
+              allowfullscreen
+              class="w-full h-full border-0"
+              loading="lazy"
+            ></iframe>
 
             <!-- Video Overlay Badge -->
-            <div class="absolute top-3 left-3 z-10">
+            <div class="absolute top-3 left-3 z-10 pointer-events-none">
               <span class="px-2.5 py-1 rounded-md text-[11px] font-extrabold bg-amber-500 text-stone-950 shadow-md">
                 {item.resultMetric}
               </span>
