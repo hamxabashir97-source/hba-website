@@ -1,0 +1,152 @@
+---
+interface VideoReview {
+  id: string;
+  clientName: string;
+  brandName: string;
+  niche: string;
+  resultMetric: string;
+  videoSrc?: string; // Path to MP4 file in public/videos/ e.g. "/videos/review1.mp4" OR YouTube/Loom embed link
+  embedType?: 'video' | 'youtube' | 'iframe';
+  quote: string;
+}
+
+const videoReviews: VideoReview[] = [
+  {
+    id: "review-1",
+    clientName: "Client Review #1",
+    brandName: "Skincare Brand Founder",
+    niche: "Beauty & Personal Care",
+    resultMetric: "3X Sales Growth in 60 Days",
+    videoSrc: "/videos/review1.mp4",
+    embedType: "video",
+    quote: "Scaled our daily orders with viral UGC video ads and Meta media buying."
+  },
+  {
+    id: "review-2",
+    clientName: "Client Review #2",
+    brandName: "Women's Fashion Owner",
+    niche: "Apparel & Accessories",
+    resultMetric: "Hit PKR 1 Crore/Month",
+    videoSrc: "/videos/review2.mp4",
+    embedType: "video",
+    quote: "Transformed our ad strategy and delivered consistent 4.8X ROAS."
+  },
+  {
+    id: "review-3",
+    clientName: "Client Review #3",
+    brandName: "Wellness D2C Founder",
+    niche: "Health & Nutrition",
+    resultMetric: "PKR 5.5 Crore Revenue",
+    videoSrc: "/videos/review3.mp4",
+    embedType: "video",
+    quote: "The influencer video ads produced shot our sales up consistently month-over-month."
+  },
+  {
+    id: "review-4",
+    clientName: "Client Review #4",
+    brandName: "Footwear Brand Owner",
+    niche: "Lifestyle & Accessories",
+    resultMetric: "+280% Revenue Surge",
+    videoSrc: "/videos/review4.mp4",
+    embedType: "video",
+    quote: "Deep research and creative iteration took our customer acquisition to the next level."
+  },
+  {
+    id: "review-5",
+    clientName: "Client Review #5",
+    brandName: "Jewelry Brand Founder",
+    niche: "Luxury & Accessories",
+    resultMetric: "5.1X Campaign ROAS",
+    videoSrc: "/videos/review5.mp4",
+    embedType: "video",
+    quote: "Professional execution and daily communication throughout our scale scaling phases."
+  },
+  {
+    id: "review-6",
+    clientName: "Client Review #6",
+    brandName: "Home Decor Founder",
+    niche: "Home & Living",
+    resultMetric: "5,000+ Monthly Orders",
+    videoSrc: "/videos/review6.mp4",
+    embedType: "video",
+    quote: "Working with HBA gave us full confidence to scale our advertising budget profitably."
+  }
+];
+---
+
+<section id="video-reviews" class="py-20 md:py-28 bg-stone-100/70 dark:bg-stone-900/40 border-t border-stone-200/80 dark:border-stone-800/80">
+  <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+    <!-- Header -->
+    <div class="text-center max-w-3xl mx-auto mb-16">
+      <span class="text-xs font-bold uppercase tracking-widest text-amber-600 dark:text-amber-400">
+        Video Case Studies & Testimonials
+      </span>
+      <h2 class="text-3xl sm:text-4xl md:text-5xl font-extrabold text-stone-900 dark:text-stone-100 mt-2 tracking-tight">
+        Watch Founders Share Their HBA Success Stories
+      </h2>
+      <p class="text-stone-600 dark:text-stone-400 mt-4 text-base sm:text-lg">
+        Real brand owners, real results. Hear directly how our performance marketing systems scaled their revenue.
+      </p>
+    </div>
+
+    <!-- Video Grid -->
+    <div class="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 gap-6 sm:gap-8">
+      {videoReviews.map((item) => (
+        <div class="rounded-2xl bg-white dark:bg-stone-900 border border-stone-200 dark:border-stone-800 overflow-hidden shadow-sm hover:shadow-xl hover:border-amber-500/50 transition-all flex flex-col justify-between group">
+          
+          <!-- Video Container / Player Frame -->
+          <div class="relative aspect-[9/16] max-h-[360px] bg-stone-950 flex items-center justify-center overflow-hidden">
+            <!-- HTML5 Video element (shown if MP4 file exists) -->
+            <video
+              id={item.id}
+              src={item.videoSrc}
+              controls
+              playsinline
+              preload="metadata"
+              class="w-full h-full object-cover"
+              poster=""
+            >
+              Your browser does not support video playback.
+            </video>
+
+            <!-- Video Overlay Badge -->
+            <div class="absolute top-3 left-3 z-10">
+              <span class="px-2.5 py-1 rounded-md text-[11px] font-extrabold bg-amber-500 text-stone-950 shadow-md">
+                {item.resultMetric}
+              </span>
+            </div>
+          </div>
+
+          <!-- Video Details Card Footer -->
+          <div class="p-5 flex flex-col justify-between flex-grow bg-white dark:bg-stone-900">
+            <div>
+              <div class="flex items-center justify-between text-xs text-stone-500 dark:text-stone-400 font-semibold mb-1">
+                <span>{item.niche}</span>
+                <span class="text-amber-500 font-bold">★ Verified Client</span>
+              </div>
+              <h3 class="text-base font-extrabold text-stone-900 dark:text-stone-100 group-hover:text-amber-600 dark:group-hover:text-amber-400 transition-colors">
+                {item.brandName}
+              </h3>
+              <p class="text-xs text-stone-600 dark:text-stone-300 mt-2 italic leading-relaxed">
+                "{item.quote}"
+              </p>
+            </div>
+
+            <div class="mt-4 pt-3 border-t border-stone-100 dark:border-stone-800 flex items-center justify-between">
+              <span class="text-xs font-bold text-stone-400 dark:text-stone-500">Video Testimonial</span>
+              <a
+                href="#book-call"
+                class="open-booking-modal text-xs font-bold text-amber-600 dark:text-amber-400 hover:underline flex items-center gap-1"
+              >
+                <span>Get Same Results</span>
+                <svg class="w-3 h-3" fill="none" viewBox="0 0 24 24" stroke="currentColor" stroke-width="2.5">
+                  <path stroke-linecap="round" stroke-linejoin="round" d="M14 5l7 7m0 0l-7 7m7-7H3" />
+                </svg>
+              </a>
+            </div>
+          </div>
+        </div>
+      ))}
+    </div>
+  </div>
+</section>
