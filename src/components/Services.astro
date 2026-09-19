@@ -1,0 +1,72 @@
+---
+const services = [
+  {
+    num: "01",
+    title: "Elite Creative Strategy",
+    desc: "We go beyond surface-level ideas. Unlike typical agencies, our creatives don’t just follow trends—we set them. Our in-depth research, in-house product testing, and refined buyer persona development ensure your ads dominate auctions and scale effortlessly."
+  },
+  {
+    num: "02",
+    title: "Expert Media Buying",
+    desc: "Even the best creatives won’t perform with poor media buying. That’s why we don’t just run ads—we execute proven, high-performing strategies. With constant testing across multiple accounts, we deploy only what’s working right now, so you don’t have to guess."
+  },
+  {
+    num: "03",
+    title: "Influencer Marketing That Converts",
+    desc: "We don’t just get influencers—we get the right influencers. With years of experience working with hundreds of creators, we match your brand with influencers who drive real conversions. Every script is meticulously crafted based on deep research, ensuring each campaign is impactful and timely."
+  },
+  {
+    num: "04",
+    title: "Strategic Business Guidance",
+    desc: "Scaling isn’t just about ads—it’s about smart business decisions. We guide you on product research, cash flow management, and omnichannel strategies to ensure your brand grows sustainably."
+  },
+  {
+    num: "05",
+    title: "Crystal-Clear Communication",
+    desc: "You should never have to chase for updates. We proactively keep you informed at every step, so you can focus on running your business while we handle the rest."
+  }
+];
+---
+
+<section id="services" class="py-20 md:py-28 bg-stone-50 dark:bg-stone-950">
+  <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+    <!-- Section Header -->
+    <div class="max-w-3xl mb-16">
+      <span class="text-xs font-bold uppercase tracking-widest text-amber-600 dark:text-amber-400">
+        End-to-End E-Commerce Growth
+      </span>
+      <h2 class="text-3xl sm:text-4xl md:text-5xl font-extrabold text-stone-900 dark:text-stone-100 mt-2 tracking-tight">
+        We Handle It All – So You Can Focus on What Matters!
+      </h2>
+      <p class="text-base sm:text-lg text-stone-600 dark:text-stone-400 mt-4">
+        A full-stack performance engine built specifically to turn ad spend into high-margin revenue for e-commerce brands.
+      </p>
+    </div>
+
+    <!-- Services Grid -->
+    <div class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-6 sm:gap-8">
+      {services.map((item, idx) => (
+        <div class={`p-8 rounded-2xl bg-white dark:bg-stone-900/60 border border-stone-200 dark:border-stone-800/80 shadow-sm hover:shadow-xl hover:border-amber-500/50 transition-all group flex flex-col justify-between ${idx === 4 ? 'md:col-span-2 lg:col-span-1' : ''}`}>
+          <div>
+            <div class="flex items-center justify-between mb-6">
+              <span class="text-3xl font-black text-amber-500/40 dark:text-amber-400/30 group-hover:text-amber-500 transition-colors">
+                {item.num}
+              </span>
+              <div class="w-8 h-8 rounded-lg bg-stone-100 dark:bg-stone-800 flex items-center justify-center text-stone-600 dark:text-stone-300 group-hover:bg-amber-500 group-hover:text-stone-950 transition-colors">
+                <svg class="w-4 h-4" fill="none" viewBox="0 0 24 24" stroke="currentColor" stroke-width="2.5">
+                  <path stroke-linecap="round" stroke-linejoin="round" d="M13 7l5 5m0 0l-5 5m5-5H6" />
+                </svg>
+              </div>
+            </div>
+            <h3 class="text-xl font-bold text-stone-900 dark:text-stone-100 group-hover:text-amber-600 dark:group-hover:text-amber-400 transition-colors">
+              {item.title}
+            </h3>
+            <p class="text-sm text-stone-600 dark:text-stone-300 mt-3 leading-relaxed">
+              {item.desc}
+            </p>
+          </div>
+        </div>
+      ))}
+    </div>
+  </div>
+</section>

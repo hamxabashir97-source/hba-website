@@ -1,0 +1,42 @@
+---
+import ThemeToggle from './ThemeToggle.astro';
+---
+
+<header class="sticky top-0 z-40 w-full backdrop-blur-md bg-stone-50/90 dark:bg-stone-950/90 border-b border-stone-200/80 dark:border-stone-800/80 transition-colors">
+  <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 h-20 flex items-center justify-between">
+    <!-- Brand Logo -->
+    <a href="#" class="flex items-center gap-3 group">
+      <div class="w-10 h-10 rounded-xl bg-amber-500 flex items-center justify-center font-extrabold text-stone-950 text-xl tracking-tighter shadow-md group-hover:scale-105 transition-transform">
+        HBA
+      </div>
+      <div class="flex flex-col">
+        <span class="font-extrabold text-lg tracking-tight text-stone-900 dark:text-stone-100 group-hover:text-amber-600 dark:group-hover:text-amber-400 transition-colors">
+          HBA Agency
+        </span>
+        <span class="text-[10px] uppercase font-bold tracking-widest text-stone-500 dark:text-stone-400">
+          Hamza Bashir Marketing
+        </span>
+      </div>
+    </a>
+
+    <!-- Desktop Navigation Links -->
+    <nav class="hidden md:flex items-center gap-8 text-sm font-semibold text-stone-600 dark:text-stone-300">
+      <a href="#services" class="hover:text-amber-600 dark:hover:text-amber-400 transition-colors">Services</a>
+      <a href="#case-studies" class="hover:text-amber-600 dark:hover:text-amber-400 transition-colors">Case Studies</a>
+      <a href="#why-us" class="hover:text-amber-600 dark:hover:text-amber-400 transition-colors">Why HBA</a>
+      <a href="#process" class="hover:text-amber-600 dark:hover:text-amber-400 transition-colors">Process</a>
+      <a href="#testimonials" class="hover:text-amber-600 dark:hover:text-amber-400 transition-colors">Testimonials</a>
+    </nav>
+
+    <!-- Right Action Controls -->
+    <div class="flex items-center gap-4">
+      <ThemeToggle />
+      <a
+        href="#book-call"
+        class="open-booking-modal inline-flex items-center justify-center px-4 py-2.5 rounded-lg font-bold text-xs sm:text-sm bg-amber-500 hover:bg-amber-400 text-stone-950 shadow-sm hover:shadow-amber-500/20 hover:scale-[1.02] active:scale-[0.98] transition-all"
+      >
+        Book Strategy Call
+      </a>
+    </div>
+  </div>
+</header>

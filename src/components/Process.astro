@@ -1,0 +1,76 @@
+---
+const steps = [
+  {
+    step: "Step 01",
+    title: "Deep-Dive Strategy",
+    desc: "We analyze your brand, target audience, economics, and current ad performance to craft a custom growth plan designed to maximize ROI across all major platforms."
+  },
+  {
+    step: "Step 02",
+    title: "Creative & Influencer Magic",
+    desc: "We create scroll-stopping ad creatives, write proven buyer-psychology scripts, and source top creators to produce high-converting videos tailored specifically for your product."
+  },
+  {
+    step: "Step 03",
+    title: "Full-Scale Ad Domination",
+    desc: "We launch, test, and aggressively optimize campaigns across Facebook, TikTok, Snapchat, Google, and YouTube—scaling your daily budget while locking in high profitability."
+  }
+];
+---
+
+<section id="process" class="py-20 md:py-28 bg-stone-100/70 dark:bg-stone-900/40 border-y border-stone-200/80 dark:border-stone-800/80">
+  <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+    <!-- Header -->
+    <div class="text-center max-w-3xl mx-auto mb-16">
+      <span class="text-xs font-bold uppercase tracking-widest text-amber-600 dark:text-amber-400">
+        Execution Roadmap
+      </span>
+      <h2 class="text-3xl sm:text-4xl md:text-5xl font-extrabold text-stone-900 dark:text-stone-100 mt-2 tracking-tight">
+        Our Proven 3-Step System to Scale Your E-Commerce Brand
+      </h2>
+      <p class="text-stone-600 dark:text-stone-400 mt-4 text-base sm:text-lg">
+        This is the exact framework we use to take brands from initial ad spend to 5,000+ orders per month.
+      </p>
+    </div>
+
+    <!-- Steps Grid -->
+    <div class="grid grid-cols-1 md:grid-cols-3 gap-8 relative mb-12">
+      {steps.map((item, idx) => (
+        <div class="p-8 rounded-2xl bg-white dark:bg-stone-900 border border-stone-200 dark:border-stone-800 shadow-sm relative z-10 flex flex-col justify-between hover:border-amber-500/50 transition-all group">
+          <div>
+            <div class="inline-block px-3 py-1 rounded-full text-xs font-black bg-amber-500/10 text-amber-700 dark:text-amber-400 border border-amber-500/20 mb-6">
+              {item.step}
+            </div>
+            <h3 class="text-xl font-extrabold text-stone-900 dark:text-stone-100 mb-3 group-hover:text-amber-600 dark:group-hover:text-amber-400 transition-colors">
+              {item.title}
+            </h3>
+            <p class="text-sm text-stone-600 dark:text-stone-300 leading-relaxed">
+              {item.desc}
+            </p>
+          </div>
+
+          <div class="pt-6 mt-6 border-t border-stone-100 dark:border-stone-800/80 flex items-center justify-between text-xs font-bold text-stone-400 dark:text-stone-500">
+            <span>Phase {idx + 1} of 3</span>
+            <svg class="w-4 h-4 text-amber-500 group-hover:translate-x-1 transition-transform" fill="none" viewBox="0 0 24 24" stroke="currentColor">
+              <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2.5" d="M14 5l7 7m0 0l-7 7m7-7H3" />
+            </svg>
+          </div>
+        </div>
+      ))}
+    </div>
+
+    <!-- CTA Box -->
+    <div class="text-center">
+      <p class="text-sm sm:text-base font-semibold text-stone-700 dark:text-stone-300 mb-6">
+        This is the same system we’ve used to scale 40+ brands to millions in revenue—trust us to make it work for you.
+      </p>
+
+      <a
+        href="#book-call"
+        class="open-booking-modal inline-flex items-center justify-center px-8 py-4 rounded-xl text-base font-bold bg-amber-500 hover:bg-amber-400 text-stone-950 shadow-lg shadow-amber-500/20 hover:scale-105 transition-all"
+      >
+        Let’s Start Scaling Your Brand — Book Your Free Call Now!
+      </a>
+    </div>
+  </div>
+</section>

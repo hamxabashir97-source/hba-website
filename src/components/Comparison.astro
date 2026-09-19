@@ -1,0 +1,99 @@
+---
+const comparisons = [
+  {
+    feature: "Case Studies & Track Record",
+    others: "Traditional ad agencies with unproven methods",
+    hba: "Proven strategies with 40+ successful e-commerce case studies"
+  },
+  {
+    feature: "Contract Terms",
+    others: "Long 6-12 month lock-in contracts",
+    hba: "Flexible month-to-month performance agreements"
+  },
+  {
+    feature: "Testing Methodology",
+    others: "Random testing at your expense without clear systems",
+    hba: "Data-driven testing frameworks with predictable ROI"
+  },
+  {
+    feature: "Platform Scope",
+    others: "Limited single-platform expertise",
+    hba: "Full mastery across Meta, TikTok, Snapchat, Google, & YouTube"
+  },
+  {
+    feature: "Creative Execution",
+    others: "Generic visual templates that don't stop the scroll",
+    hba: "Psychology-driven creatives engineered to drive purchases"
+  },
+  {
+    feature: "Influencer Integration",
+    others: "Zero influencer support or delegated out to expensive vendors",
+    hba: "End-to-end creator outreach, scripting, & viral UGC production"
+  }
+];
+---
+
+<section id="why-us" class="py-20 md:py-28 bg-stone-50 dark:bg-stone-950">
+  <div class="max-w-6xl mx-auto px-4 sm:px-6 lg:px-8">
+    <!-- Header -->
+    <div class="text-center max-w-3xl mx-auto mb-16">
+      <span class="text-xs font-bold uppercase tracking-widest text-amber-600 dark:text-amber-400">
+        The HBA Advantage
+      </span>
+      <h2 class="text-3xl sm:text-4xl md:text-5xl font-extrabold text-stone-900 dark:text-stone-100 mt-2 tracking-tight">
+        Why HBA Is the Partner E-Commerce Brands Trust
+      </h2>
+      <p class="text-stone-600 dark:text-stone-400 mt-4 text-base sm:text-lg">
+        We're not just another agency—we operate as your dedicated internal growth team. Here is how we compare.
+      </p>
+    </div>
+
+    <!-- Comparison Table / Card View -->
+    <div class="rounded-2xl border border-stone-200 dark:border-stone-800 bg-white dark:bg-stone-900 overflow-hidden shadow-sm">
+      <!-- Table Header -->
+      <div class="grid grid-cols-12 bg-stone-100 dark:bg-stone-800/80 p-4 sm:p-6 text-xs sm:text-sm font-extrabold text-stone-700 dark:text-stone-200 border-b border-stone-200 dark:border-stone-800">
+        <div class="col-span-5 sm:col-span-4 uppercase tracking-wider text-stone-500 dark:text-stone-400">Feature / Standard</div>
+        <div class="col-span-3 sm:col-span-4 uppercase tracking-wider text-rose-600 dark:text-rose-400">Other Agencies</div>
+        <div class="col-span-4 sm:col-span-4 uppercase tracking-wider text-amber-600 dark:text-amber-400 flex items-center gap-1.5">
+          <svg class="w-4 h-4 text-amber-500" fill="currentColor" viewBox="0 0 20 20">
+            <path fill-rule="evenodd" d="M10 18a8 8 0 100-16 8 8 0 000 16zm3.707-9.293a1 1 0 00-1.414-1.414L9 10.586 7.707 9.293a1 1 0 00-1.414 1.414l2 2a1 1 0 001.414 0l4-4z" clip-rule="evenodd"/>
+          </svg>
+          <span>HBA Agency</span>
+        </div>
+      </div>
+
+      <!-- Table Body Rows -->
+      <div class="divide-y divide-stone-200 dark:divide-stone-800">
+        {comparisons.map((row) => (
+          <div class="grid grid-cols-12 p-4 sm:p-6 text-xs sm:text-sm items-center hover:bg-stone-50/50 dark:hover:bg-stone-800/30 transition-colors">
+            <!-- Feature Title -->
+            <div class="col-span-5 sm:col-span-4 font-bold text-stone-900 dark:text-stone-100 pr-2">
+              {row.feature}
+            </div>
+
+            <!-- Other Agencies -->
+            <div class="col-span-3 sm:col-span-4 text-stone-500 dark:text-stone-400 flex items-start gap-2 pr-2">
+              <svg class="w-4 h-4 text-rose-500 shrink-0 mt-0.5" fill="none" viewBox="0 0 24 24" stroke="currentColor" stroke-width="2.5">
+                <path stroke-linecap="round" stroke-linejoin="round" d="M6 18L18 6M6 6l12 12" />
+              </svg>
+              <span>{row.others}</span>
+            </div>
+
+            <!-- HBA Agency -->
+            <div class="col-span-4 sm:col-span-4 font-semibold text-stone-900 dark:text-stone-100 bg-amber-500/5 dark:bg-amber-500/10 p-2 sm:p-3 rounded-lg border border-amber-500/20 flex items-start gap-2">
+              <svg class="w-4 h-4 text-amber-500 shrink-0 mt-0.5" fill="none" viewBox="0 0 24 24" stroke="currentColor" stroke-width="2.5">
+                <path stroke-linecap="round" stroke-linejoin="round" d="M5 13l4 4L19 7" />
+              </svg>
+              <span>{row.hba}</span>
+            </div>
+          </div>
+        ))}
+      </div>
+    </div>
+
+    <!-- Summary Box -->
+    <div class="mt-12 text-center text-sm text-stone-600 dark:text-stone-400 max-w-3xl mx-auto leading-relaxed">
+      We’re not just another ad agency—we’re the growth partner e-commerce brands trust to deliver real results. With years of experience scaling e-commerce businesses, our case studies prove we can take your brand to the next level with expert ads management, viral creatives, and influencer marketing.
+    </div>
+  </div>
+</section>

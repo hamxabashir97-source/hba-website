@@ -1,0 +1,32 @@
+---
+const partners = [
+  { name: "Meta Partner", platform: "Facebook & Instagram Ads" },
+  { name: "TikTok Partner", platform: "TikTok Ads & UGC" },
+  { name: "Google Partner", platform: "Search & Shopping Ads" },
+  { name: "Shopify Partner", platform: "E-Commerce Optimization" },
+  { name: "Snapchat Partner", platform: "Snapchat Ads" },
+  { name: "YouTube Partner", platform: "Video & VSL Campaigns" },
+];
+---
+
+<section class="py-10 border-y border-stone-200/80 dark:border-stone-800/80 bg-stone-100/50 dark:bg-stone-900/30">
+  <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+    <p class="text-center text-xs font-bold uppercase tracking-widest text-stone-400 dark:text-stone-500 mb-6">
+      Certified Growth & Platform Partners
+    </p>
+
+    <!-- Partner Badges Grid -->
+    <div class="grid grid-cols-2 sm:grid-cols-3 md:grid-cols-6 gap-3 sm:gap-4 text-center">
+      {partners.map((partner) => (
+        <div class="p-3 sm:p-4 rounded-xl bg-white dark:bg-stone-900 border border-stone-200 dark:border-stone-800 shadow-sm flex flex-col items-center justify-center group hover:border-amber-500/50 transition-colors">
+          <span class="font-extrabold text-sm text-stone-800 dark:text-stone-200 group-hover:text-amber-600 dark:group-hover:text-amber-400 transition-colors">
+            {partner.name}
+          </span>
+          <span class="text-[10px] text-stone-500 dark:text-stone-400 font-medium mt-0.5">
+            {partner.platform}
+          </span>
+        </div>
+      ))}
+    </div>
+  </div>
+</section>

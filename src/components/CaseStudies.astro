@@ -1,0 +1,130 @@
+---
+const cases = [
+  {
+    category: "Women’s Apparel Brand",
+    metric: "From ₹20L/mo to ₹70L/mo in 60 Days",
+    roas: "4.8X ROAS",
+    highlight: "+250% Revenue Lift",
+    badge: "Scale Milestone",
+    quote: "Their ad strategies and influencer videos turned our brand around—we’re now hitting record sales every month!",
+    details: [
+      "Deployed high-converting UGC fashion try-on ads",
+      "Optimized Meta & TikTok media buying strategy",
+      "Scaled ad spend while keeping CPA low"
+    ]
+  },
+  {
+    category: "Wellness Brand",
+    metric: "Generated ₹5.5Cr in Revenue in 12 Months",
+    roas: "30% MoM Growth",
+    highlight: "₹5.5 Crore Scaled",
+    badge: "Consistent Scale",
+    quote: "The team at HBA knows exactly how to scale—they delivered results we could trust!",
+    details: [
+      "Omnichannel YouTube & Meta funnel scaling",
+      "Influencer video ads targeting high-intent buyers",
+      "Cash flow & inventory-aligned media planning"
+    ]
+  },
+  {
+    category: "Skincare Brand",
+    metric: "From $15K/mo to $45K/mo in 45 Days",
+    roas: "5.1X ROAS",
+    highlight: "3X Revenue in 45 Days",
+    badge: "Rapid Growth",
+    quote: "Their creative strategy and ad management took us to the next level—we saw the proof in our numbers!",
+    details: [
+      "Hook-tested Facebook & Instagram ad variations",
+      "Micro-influencer content production pipeline",
+      "High-converting landing page optimization tips"
+    ]
+  }
+];
+---
+
+<section id="case-studies" class="py-20 md:py-28 bg-stone-100/70 dark:bg-stone-900/40 border-y border-stone-200/80 dark:border-stone-800/80">
+  <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+    <!-- Header -->
+    <div class="text-center max-w-3xl mx-auto mb-16">
+      <span class="text-xs font-bold uppercase tracking-widest text-amber-600 dark:text-amber-400">
+        Social Proof & Case Studies
+      </span>
+      <h2 class="text-3xl sm:text-4xl md:text-5xl font-extrabold text-stone-900 dark:text-stone-100 mt-2 tracking-tight">
+        Real Brands, Real Results—See Why 40+ E-Commerce Brands Trust HBA!
+      </h2>
+      <p class="text-stone-600 dark:text-stone-300 mt-4 text-base sm:text-lg">
+        We don't sell empty promises. We engineer data-backed growth systems that transform e-commerce revenue trajectories.
+      </p>
+    </div>
+
+    <!-- Case Studies Cards Grid -->
+    <div class="grid grid-cols-1 lg:grid-cols-3 gap-8 mb-16">
+      {cases.map((item) => (
+        <div class="p-8 rounded-2xl bg-white dark:bg-stone-900 border border-stone-200/90 dark:border-stone-800 shadow-sm flex flex-col justify-between hover:border-amber-500/50 transition-all group">
+          <div>
+            <!-- Category & Badge -->
+            <div class="flex items-center justify-between gap-2 mb-4">
+              <span class="text-xs font-bold uppercase tracking-wider text-stone-500 dark:text-stone-400">
+                {item.category}
+              </span>
+              <span class="px-2.5 py-1 rounded-full text-[11px] font-bold bg-amber-500/10 text-amber-700 dark:text-amber-400 border border-amber-500/20">
+                {item.badge}
+              </span>
+            </div>
+
+            <!-- Primary Metric Header -->
+            <h3 class="text-xl sm:text-2xl font-extrabold text-stone-900 dark:text-stone-100 group-hover:text-amber-600 dark:group-hover:text-amber-400 transition-colors leading-snug mb-3">
+              {item.metric}
+            </h3>
+
+            <!-- ROAS & Highlight Pills -->
+            <div class="flex items-center gap-2 mb-6">
+              <span class="px-3 py-1 rounded-md text-xs font-extrabold bg-emerald-500/10 text-emerald-700 dark:text-emerald-400 border border-emerald-500/20">
+                {item.roas}
+              </span>
+              <span class="px-3 py-1 rounded-md text-xs font-bold bg-stone-100 dark:bg-stone-800 text-stone-700 dark:text-stone-300">
+                {item.highlight}
+              </span>
+            </div>
+
+            <!-- Deliverables / Strategy Points -->
+            <ul class="space-y-2 mb-6 text-xs sm:text-sm text-stone-600 dark:text-stone-300">
+              {item.details.map((detail) => (
+                <li class="flex items-start gap-2">
+                  <svg class="w-4 h-4 text-amber-500 shrink-0 mt-0.5" fill="none" viewBox="0 0 24 24" stroke="currentColor" stroke-width="2.5">
+                    <path stroke-linecap="round" stroke-linejoin="round" d="M5 13l4 4L19 7" />
+                  </svg>
+                  <span>{detail}</span>
+                </li>
+              ))}
+            </ul>
+          </div>
+
+          <!-- Quote Block -->
+          <div class="pt-6 border-t border-stone-100 dark:border-stone-800/80 italic text-xs sm:text-sm text-stone-600 dark:text-stone-400 leading-relaxed">
+            "{item.quote}"
+          </div>
+        </div>
+      ))}
+    </div>
+
+    <!-- Bottom Banner & CTA -->
+    <div class="p-8 sm:p-10 rounded-2xl bg-gradient-to-br from-stone-900 to-stone-950 text-white border border-stone-800 flex flex-col md:flex-row items-center justify-between gap-6 text-center md:text-left">
+      <div>
+        <h4 class="text-xl sm:text-2xl font-bold text-amber-400">
+          These are just a few of the 40+ brands we’ve scaled.
+        </h4>
+        <p class="text-sm text-stone-300 mt-2">
+          Our results speak for themselves. Ready to see what HBA can do for your e-commerce store?
+        </p>
+      </div>
+
+      <a
+        href="#book-call"
+        class="open-booking-modal shrink-0 inline-flex items-center justify-center px-6 py-3.5 rounded-xl text-sm font-bold bg-amber-500 hover:bg-amber-400 text-stone-950 shadow-md hover:scale-105 transition-all"
+      >
+        Ready to Be Our Next Success Story? Book Call Now!
+      </a>
+    </div>
+  </div>
+</section>
